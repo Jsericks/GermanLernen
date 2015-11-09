@@ -1,0 +1,35 @@
+.pageheader
+  h1
+    | Home
+  p.description
+    | Welcome to GermanLernen.com
+  .breadcrumb-wrapper.hidden-xs
+    span.label
+      | You are here:&nbsp;
+    ol.breadcrumb
+      li.active
+        = params[:controller].to_s.titleize
+section#main-content
+  .row
+    .col-md-6
+      .panel.panel-solid-primary
+        .panel-heading
+          h3.panel-title           
+            | Stuff and things
+    .col-md-6
+      .panel.panel-solid-primary
+        .panel-heading
+          h3.panel-title
+            | Stuff and things
+
+<section id="main-content">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          You can quickly bootstrap your Web App project here.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
