@@ -2,3 +2,5 @@
 // listed below.
 
 //= require src/app
+//= require knockout
+//= require knockout-mapping-js

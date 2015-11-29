@@ -5,8 +5,6 @@ var app = function() {
         navToggleLeft();
         navToggleSub();
         profileToggle();
-
-
     });
 
 

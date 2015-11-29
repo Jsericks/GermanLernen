@@ -9,18 +9,23 @@
     ol.breadcrumb
       li.active
         = params[:controller].to_s.titleize
+
+script#indexTemplate type="text/html"
+  .panel.panel-primary
+    .panel-heading
+      h3.panel-title 
+        i data-bind="css: icon_class"
+          | &nbsp;
+        span data-bind="text: name"
+      .actions.pull-right
+        | Topic Count:&nbsp;
+        span data-bind="text: topic_count"
+    .panel-body data-bind="text: description"
+
 section#main-content
   .row
     .col-md-6
-      .panel.panel-solid-primary
-        .panel-heading
-          h3.panel-title           
-            | Stuff and things
-    .col-md-6
-      .panel.panel-solid-primary
-        .panel-heading
-          h3.panel-title
-            | Stuff and things
+      div data-bind='template: {name: "indexTemplate", foreach: items}'
 
 <section id="main-content">
   <div class="row">

@@ -1,0 +1,42 @@
+.pageheader
+  h1
+    | Home
+  p.description
+    | Welcome to GermanLernen.com
+  .breadcrumb-wrapper.hidden-xs
+    span.label
+      | You are here:&nbsp;
+    ol.breadcrumb
+      li.active data-bind="text: breadcrumb"
+
+/ INDEX TEMPLATE
+script#indexTemplate type="text/html"
+  .col-md-6
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title
+          i data-bind="css: icon_class"
+            | &nbsp;
+          span data-bind="text: name"
+        .actions.pull-right
+          | Topic Count:&nbsp;
+          span data-bind="text: topic_count"
+      .panel-body
+        div data-bind="text: description"
+      .panel-footer
+        a.btn.btn-primary data-bind="click: function(){ forumViewModel.showAction($data) }"
+          | See all Topics
+
+script#showTemplate type="text/html"
+  .col-md-12
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title data-bind="text: title"
+      .panel-body
+
+section#main-content
+  .row
+    div data-bind="visible: currentPage() == 'index'"
+      div data-bind='template: {name: "indexTemplate", foreach: forums}'
+    div data-bind="visible: currentPage() == 'show'"
+      div data-bind='template: {name: "showTemplate", foreach: topics}'

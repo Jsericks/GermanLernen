@@ -20,8 +20,8 @@ module RailsSeedVersion
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     # precompile vendor assets
-    config.assets.precompile += %w( base.js )
-    config.assets.precompile += %w( base.css )
+    config.assets.precompile += %w( base.js base.css )
+    config.assets.precompile += %w( forums.js )
 
     console do
       ActiveRecord::Base.connection        
